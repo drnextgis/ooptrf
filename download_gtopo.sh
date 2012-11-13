@@ -1,4 +1,11 @@
-#Скачиваем РФ до 180-го меридиана
+#Назначаем каталог для gtopo
+export gtopo_dir=$work_dir/gtopo30
+
+#Создаем каталог и переходим в него
+mkdir $gtopo_dir
+cd $gtopo_dir
+ 
+#Скачиваем территорию РФ до 180-го меридиана
 wget http://edcftp.cr.usgs.gov/pub/data/gtopo30/global/e020n90.tar.gz
 wget http://edcftp.cr.usgs.gov/pub/data/gtopo30/global/e060n90.tar.gz
 wget http://edcftp.cr.usgs.gov/pub/data/gtopo30/global/e100n90.tar.gz
@@ -13,4 +20,3 @@ tar -xvf e060n90.tar.gz
 tar -xvf e100n90.tar.gz
 tar -xvf e140n90.tar.gz
 tar -xvf w180n90.tar.gz
-
