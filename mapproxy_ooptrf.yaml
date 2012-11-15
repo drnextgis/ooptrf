@@ -1,0 +1,62 @@
+services:
+  demo:
+  kml:
+  tms:
+  wmts:
+  wms:
+    srs: ['EPSG:4326', 'EPSG:900913', 'EPSG:3857', 'EPSG:102012']
+    image_formats: ['image/jpeg', 'image/png']
+
+layers:
+  - name: ooptrf
+    title: ООПТ Российской Федерации
+    sources: [ooptrf_cache]
+
+caches:
+  ooptrf_cache:
+    grids: [conic_grid]
+    sources: [ooptrf_src]
+    cache:
+      type: mbtiles
+      filename: /Users/nextstopsun/conf/cachedata/ooptrf.mbtiles
+    meta_size: [8, 8]
+    meta_buffer: 128
+    minimize_meta_requests: true
+    link_single_color_images: true
+
+sources:
+    ooptrf_src:
+        type: mapnik
+        mapfile: /Users/nextstopsun/Work/ooptrf/mapnik_ooptrf.xml
+
+grids:
+  conic_grid:
+    tile_size: [256, 256]
+    srs: 'EPSG:102012'
+    bbox: [-5401501, 4065283, 4402101, 11195701]
+    bbox_srs: 'EPSG:102012'
+    res: [
+         #  res            level     scale @90.7 DPI
+       140000.0000000000, #  0   500000000.00000000
+        70000.0000000000, #  1   250000000.00000000
+        35000.0000000000, #  2   125000000.00000000
+        17500.0000000000, #  3    62500000.00000000
+         8750.0000000000, #  4    31250000.00000000
+         4375.0000000000, #  5    15625000.00000000
+         2187.5000000000, #  6     7812500.00000000
+         1093.7500000000, #  7     3906250.00000000
+          546.8750000000, #  8     1953125.00000000
+          273.4375000000, #  9      976562.50000000
+          136.7187500000, # 10      488281.25000000
+           68.3593750000, # 11      244140.62500000
+           34.1796875000, # 12      122070.31250000
+           17.0898437500, # 13       61035.15625000
+            8.5449218750, # 14       30517.57812500
+            4.2724609375, # 15       15258.78906250
+            2.1362304688, # 16        7629.39453125
+            1.0681152344, # 17        3814.69726562
+    ]
+
+globals:
+  image:
+    resampling_method: bicubic 

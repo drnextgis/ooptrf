@@ -1,8 +1,4 @@
-#Назначаем каталог для gtopo
-export gtopo_dir=$work_dir/gtopo30
-
-#Создаем каталог и переходим в него
-mkdir $gtopo_dir
+#Переходим в каталог gtopo
 cd $gtopo_dir
  
 #Скачиваем территорию РФ до 180-го меридиана

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[
+  <!ENTITY conicsrs "+proj=lcc +lat_1=30 +lat_2=62 +lat_0=0 +lon_0=105 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs">
+  <!ENTITY dbsettings SYSTEM "dbsettings.inc">
+  <!ENTITY gtopo_dir "/Users/nextstopsun/conf/geodata/gtopo30">
+]>
+
+<Map
+        xmlns:xi="http://www.w3.org/2001/XInclude"
+        srs="&conicsrs;"
+        font-directory="/Users/nextstopsun/Work/ooptrf/fonts"
+        background-color="#e9e9e9"
+>
+
+<FontSet name="fontset-0">
+  <Font face-name="Open Sans Semibold"/>
+  <Font face-name="DejaVu Sans Book"/>
+  <Font face-name="unifont Medium"/>
+</FontSet>
+<FontSet name="fontset-1">
+  <Font face-name="Open Sans Bold Italic"/>
+  <Font face-name="DejaVu Sans Bold Italic"/>
+  <Font face-name="unifont Medium"/>
+</FontSet>
+<FontSet name="fontset-2">
+  <Font face-name="Open Sans Bold"/>
+  <Font face-name="DejaVu Sans Bold"/>
+  <Font face-name="unifont Medium"/>
+</FontSet>
+<FontSet name="fontset-3">
+  <Font face-name="Open Sans Semibold Italic"/>
+  <Font face-name="DejaVu Sans Italic"/>
+  <Font face-name="unifont Medium"/>
+</FontSet>
+
+  <xi:include href="mapnik_styles.inc"/>
+
+  <Layer name="gtopo_hs">
+    <StyleName>gtopo_hs_style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">&gtopo_dir;/gtopo_hs.tif</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="chuk_hs">
+    <StyleName>gtopo_hs_style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">&gtopo_dir;/chuk_hs.tif</Parameter>
+    </Datasource>
+  </Layer>
+
+  <Layer name="gtopo_color">
+    <StyleName>gtopo_color_style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">&gtopo_dir;/gtopo_color.tif</Parameter>
+    </Datasource>
+  </Layer>
+
+  <Layer name="chuk_color">
+    <StyleName>gtopo_color_style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">&gtopo_dir;/chuk_color.tif</Parameter>
+    </Datasource>
+  </Layer>
+
+  <Layer name="ne_urban">
+    <StyleName>ne_urban_style</StyleName>
+    <Datasource>
+       &dbsettings;
+       <Parameter name="table">(SELECT ogc_fid, conicgeom FROM ne.urban) AS data</Parameter>
+    </Datasource>
+  </Layer>
+
+  <Layer name="glaciers">
+    <StyleName>ne_glaciers_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">(SELECT ogc_fid, conicgeom FROM ne.glaciers) AS data</Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="gtopo_s_color">
+    <StyleName>gtopo_slope_style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">&gtopo_dir;/gtopo_s_color.tif</Parameter>
+    </Datasource>
+  </Layer>
+
+  <Layer name="chuk_s_color">
+    <StyleName>gtopo_slope_style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">&gtopo_dir;/chuk_s_color.tif</Parameter>
+    </Datasource>
+  </Layer>
+ 
+<Layer name="adm2_country">
+    <StyleName>adm2_country_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">adm.adm2_country</Parameter>
+    </Datasource>
+</Layer>
+
+
+
+<Layer name="ne_rivers">
+    <StyleName>ne_rivers_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">ne.rivers</Parameter>
+    </Datasource>
+  </Layer>
+
+
+
+ <Layer name="ne_lakes">
+    <StyleName>ne_lakes_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">(SELECT ogc_fid, conicgeom FROM ne.lakes) AS data</Parameter>
+    </Datasource>
+ </Layer>
+
+ <Layer name="roads_small_zoom" srs="&conicsrs;">
+	    <StyleName>roads_small_zoom_style</StyleName>
+	    <Datasource>
+	      	&dbsettings;
+	       <Parameter name="table">	<![CDATA[( SELECT conicgeom, type, id
+		  FROM osm_motorways_gen0
+		) AS data]]></Parameter>
+	    </Datasource>
+ </Layer>
+
+ <Layer name="roads_big_zoom" srs="&conicsrs;">
+    <StyleName>roads_big_zoom_style</StyleName>
+    <Datasource>
+      	&dbsettings;
+       <Parameter name="table">	<![CDATA[( SELECT conicgeom, type, id
+	  FROM osm_roads_gen1
+	  WHERE type IN ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link')
+	) AS data]]></Parameter>
+    </Datasource>
+ </Layer>
+
+
+<Layer name="adm4_region">
+    <StyleName>adm4_region_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">adm.adm4_region</Parameter>
+    </Datasource>
+  </Layer>
+<Layer name="fz">
+    <StyleName>fz_style</StyleName>
+    <StyleName>fz_name_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">(SELECT ogc_fid, name_ru, conicgeom FROM oopt.fz) AS data</Parameter>
+    </Datasource>
+</Layer>
+
+<Layer name="np">
+    <StyleName>np_style</StyleName>
+    <StyleName>np_name_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">(SELECT ogc_fid, name_ru, conicgeom FROM oopt.np) AS data</Parameter>
+    </Datasource>
+</Layer>
+
+<Layer name="zp">
+    <StyleName>zp_style</StyleName>
+    <StyleName>zp_name_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+       <Parameter name="table">(SELECT ogc_fid, name_ru, conicgeom FROM oopt.zp) AS data</Parameter>
+    </Datasource>
+</Layer>
+
+<Layer name="place" srs="&conicsrs;">
+    <StyleName>place-country</StyleName>
+    <StyleName>place-state</StyleName>
+    <StyleName>place-city</StyleName>
+    <StyleName>place-town</StyleName>
+    <StyleName>place-small</StyleName>
+    <Datasource>
+      	&dbsettings;
+       <Parameter name="table"><![CDATA[( SELECT conicgeom, id, type, name, z_order, population
+  FROM osm_places
+  ORDER BY z_order, population DESC NULLS LAST
+) AS data]]></Parameter>
+    </Datasource>
+</Layer>
+
+<!--
+<Layer name="slopeshade">
+    <StyleName>slopeshade style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">/Users/nextstopsun/Work/gtopo/gtopo_rus_slope_color3.tif</Parameter>
+    </Datasource>
+  </Layer>
+  <Layer name="slopeshade chuk">
+    <StyleName>slopeshade style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">/Users/nextstopsun/Work/gtopo/chuk_slope_color3.tif</Parameter>
+    </Datasource>
+  </Layer>
+
+ 
+<Layer name="hillshade">
+    <StyleName>hillshade style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">/Users/nextstopsun/Work/gtopo/gtopo_rus_102012_hs2.tif</Parameter>
+    </Datasource>
+  </Layer>  
+  <Layer name="hillshade chuk">
+    <StyleName>hillshade style</StyleName>
+    <Datasource>
+      <Parameter name="type">gdal</Parameter>
+      <Parameter name="file">/Users/nextstopsun/Work/gtopo/chuk_hs.tif</Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="rfbound">
+    <StyleName>rfbound_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">rfbound</Parameter>
+    </Datasource>
+</Layer>
+
+<Layer name="rivers">
+    <StyleName>river_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">(SELECT gid, conicgeom FROM conic.rivers) AS data</Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="lakes">
+    <StyleName>lake_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">(SELECT gid, conicgeom FROM conic.lakes) AS data</Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="roads_low" srs="&conicsrs;">
+	    <StyleName>roads_low</StyleName>
+	    <Datasource>
+	      	&dbsettings;
+		    &conicsettings;
+	       <Parameter name="table">	<![CDATA[( SELECT conicgeom, type, id as gid
+		  FROM osm_motorways_gen0
+		) AS data]]></Parameter>
+	    </Datasource>
+</Layer>
+
+<Layer name="roads_med" srs="&conicsrs;">
+    <StyleName>roads_med</StyleName>
+    <Datasource>
+      	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">	<![CDATA[( SELECT conicgeom, type, id as gid
+	  FROM osm_roads_gen1
+	  WHERE type IN ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link')
+	) AS data]]></Parameter>
+    </Datasource>
+</Layer>
+	
+<Layer name="adm">
+    <StyleName>adm_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">(SELECT gid, conicgeom FROM conic.adm) AS data</Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="fz">
+    <StyleName>fz_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">(SELECT gid, name_ru, conicgeom FROM oopt.fz) AS data</Parameter>
+    </Datasource>
+</Layer>
+
+<Layer name="np">
+    <StyleName>np_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">(SELECT gid, name_ru, conicgeom FROM oopt.np) AS data</Parameter>
+    </Datasource>
+</Layer>
+
+<Layer name="zp">
+    <StyleName>zp_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">(SELECT gid, name_ru, conicgeom FROM oopt.zp) AS data</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="grid_3_2">
+    <StyleName>grid_3_2_style</StyleName>
+    <Datasource>
+       	&dbsettings;
+	    &conicsettings;
+       <Parameter name="table">(SELECT gid, coord, conicgeom FROM conic.grid_3_2) AS data</Parameter>
+    </Datasource>
+  </Layer>
+
+	<Layer name="place" srs="&conicsrs;">
+	    <StyleName>place-country</StyleName>
+	    <StyleName>place-state</StyleName>
+	    <StyleName>place-city</StyleName>
+	    <StyleName>place-town</StyleName>
+	    <StyleName>place-small</StyleName>
+	    <Datasource>
+	      	&dbsettings;
+		    &conicsettings;
+	       <Parameter name="table"><![CDATA[( SELECT conicgeom, id AS gid, type, name, z_order, population
+	  FROM osm_places
+	  ORDER BY z_order, population DESC NULLS LAST
+	) AS data]]></Parameter>
+	    </Datasource>
+	</Layer>
+	
+	
+	<Layer name="area_label" srs="&conicsrs;">
+	    <StyleName>area_label</StyleName>
+	    <Datasource>
+	      	&dbsettings;
+		    &conicsettings;
+	       <Parameter name="table"><![CDATA[( SELECT id as gid, type, name, area, 'land' AS stylegroup,
+	    ST_PointOnSurface(conicgeom) AS conicgeom
+	  FROM osm_landusages
+	  WHERE name IS NOT NULL
+	    AND conicgeom && !bbox!
+	    AND type IN (
+	      'cemetery', 'college', 'commercial', 'common', 'garden', 'golf_course',
+	      'hospital', 'industrial', 'library', 'park', 'pedestrian', 'place_of_worship',
+	      'playground', 'school', 'sports_center', 'stadium', 'theatre', 'university' )
+	    AND conicgeom && !bbox!
+	    AND ST_IsValid(conicgeom)
+
+	  UNION ALL
+
+	  SELECT id as gid, type, name, area, 'water' AS stylegroup,
+	    ST_PointOnSurface(conicgeom) AS conicgeom
+	  FROM osm_waterareas
+	  WHERE name IS NOT NULL
+	    AND type in ( 'water', 'basin' )
+	    AND conicgeom && !bbox!
+	    AND ST_IsValid(conicgeom)
+
+	  UNION ALL
+
+	  SELECT id as gid, 'building' AS type, name, area, 'building' AS stylegroup,
+	    ST_PointOnSurface(conicgeom) AS conicgeom
+	  FROM osm_buildings
+	  WHERE name IS NOT NULL 
+	    AND conicgeom && !bbox!
+	    AND ST_IsValid(conicgeom)
+
+	  ORDER BY area DESC
+	) AS data]]></Parameter>
+	    </Datasource>
+	</Layer>
+
+-->
+		
+</Map>
