@@ -4,7 +4,7 @@ services:
   tms:
   wmts:
   wms:
-    srs: ['EPSG:4326', 'EPSG:900913', 'EPSG:3857', 'EPSG:102012']
+    srs: ['EPSG:102012']
     image_formats: ['image/jpeg', 'image/png']
 
 layers:

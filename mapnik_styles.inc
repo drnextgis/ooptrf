@@ -38,10 +38,6 @@
 		  <LineSymbolizer stroke="#f7f7f7" stroke-opacity="0.3" stroke-width="4" smooth="0.8" transform="translate(0,0)"/>
 	      <LineSymbolizer stroke="#ffffff" stroke-opacity="1" stroke-width="2"/>
 	 </Rule>
-	 <!--Rule>
-		  <MinScaleDenominator>25000000</MinScaleDenominator>
-	      <LineSymbolizer stroke="#ffffff" stroke-opacity="0.8" stroke-width="0.8"/>
-	 </Rule-->
 	</Style>
 	
 	
