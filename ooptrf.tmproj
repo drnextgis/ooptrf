@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>mapscript.js</string>
+	<string>mapnik_styles.inc</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>init.sh</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T14:23:16Z</date>
+			<date>2012-11-15T22:08:55Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -76,13 +76,13 @@
 			<key>filename</key>
 			<string>import_ne.sh</string>
 			<key>lastUsed</key>
-			<date>2012-11-14T21:50:33Z</date>
+			<date>2012-11-16T20:18:59Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>add_conic_geom_ne.sql</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T19:43:02Z</date>
+			<date>2012-11-16T21:06:19Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -94,13 +94,13 @@
 			<key>filename</key>
 			<string>import_osm.sh</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T10:30:22Z</date>
+			<date>2012-11-15T22:04:06Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>add_conic_geom_osm.sql</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T10:43:34Z</date>
+			<date>2012-11-16T20:59:12Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -124,7 +124,7 @@
 			<key>filename</key>
 			<string>imposm_mapping.py</string>
 			<key>lastUsed</key>
-			<date>2012-11-14T14:33:20Z</date>
+			<date>2012-11-16T19:36:46Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
@@ -136,31 +136,39 @@
 			<key>filename</key>
 			<string>mapnik_styles.inc</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T20:25:26Z</date>
+			<date>2012-11-16T21:06:19Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>mapnik_ooptrf.xml</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T19:42:30Z</date>
+			<date>2012-11-16T20:51:32Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>mapproxy_ooptrf.yaml</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T20:12:14Z</date>
+			<date>2012-11-16T09:23:05Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>index.html</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T20:25:44Z</date>
+			<date>2012-11-16T20:24:16Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>style.css</string>
+			<key>lastUsed</key>
+			<date>2012-11-16T20:20:05Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>mapscript.js</string>
 			<key>lastUsed</key>
-			<date>2012-11-15T20:25:44Z</date>
+			<date>2012-11-16T20:19:07Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -186,14 +194,30 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>73</integer>
+				<integer>67</integer>
 				<key>line</key>
-				<integer>14</integer>
+				<integer>2</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>67</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
 		</dict>
 		<key>add_conic_geom_oopt.sql</key>
 		<dict>
@@ -235,7 +259,7 @@
 				<integer>99</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
-			<integer>83</integer>
+			<integer>50</integer>
 			<key>firstVisibleLine</key>
 			<integer>90</integer>
 		</dict>
@@ -448,14 +472,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>45</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>17</integer>
+				<integer>9</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>import_oopt.sh</key>
 		<dict>
@@ -529,7 +553,7 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>102</integer>
 		</dict>
 		<key>index.html</key>
 		<dict>
@@ -538,7 +562,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>20</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -550,70 +574,70 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>2</integer>
+				<integer>16</integer>
 				<key>line</key>
-				<integer>56</integer>
+				<integer>62</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>35</integer>
+			<integer>0</integer>
 		</dict>
 		<key>mapnik_ooptrf.xml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>35</integer>
 				<key>line</key>
-				<integer>160</integer>
+				<integer>189</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>176</integer>
 		</dict>
 		<key>mapnik_styles.inc</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>78</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>42</integer>
+				<integer>36</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>14</integer>
+			<integer>0</integer>
 		</dict>
 		<key>mapproxy_ooptrf.yaml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>10</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>27</integer>
+				<integer>61</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>5</integer>
+			<integer>0</integer>
 		</dict>
 		<key>mapscript.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>22</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>43</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>12</integer>
 		</dict>
 		<key>process_gtopo.sh</key>
 		<dict>
@@ -643,6 +667,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>style.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
@@ -663,6 +701,7 @@
 		<string>mapnik_ooptrf.xml</string>
 		<string>mapnik_styles.inc</string>
 		<string>index.html</string>
+		<string>style.css</string>
 		<string>mapscript.js</string>
 		<string>mapproxy_ooptrf.yaml</string>
 		<string>dbsettings.inc</string>
@@ -676,6 +715,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{829, 188}, {535, 534}}</string>
+	<string>{{482, 190}, {536, 587}}</string>
 </dict>
 </plist>
